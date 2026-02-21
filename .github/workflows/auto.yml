@@ -1,0 +1,14 @@
+name: TelegramBot
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install requests
+        run: pip install requests
+      - name: Run script
+        run: python bot.py
